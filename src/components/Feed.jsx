@@ -7,7 +7,6 @@ import UserCard from './UserCard'
 const Feed = () => {
   const dispatch = useDispatch()
   const feed = useSelector((store) => store.feed)
-  console.log(feed)
   const feedData = async () => {
     const connections = await axios.get(BASE_URL + "/user/feed", {
       withCredentials: true
@@ -25,5 +24,4 @@ const Feed = () => {
     )
   )
 }
-
 export default Feed
