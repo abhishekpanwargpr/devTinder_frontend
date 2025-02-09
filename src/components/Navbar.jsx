@@ -5,7 +5,7 @@ import { BASE_URL } from "../utils/constants"
 import { removeUser } from "../utils/userSlice"
 const Navbar = () => {
     const user = useSelector((store) => store.user)
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const logoutHandler = async () => {
         try {
@@ -45,7 +45,18 @@ const Navbar = () => {
                                     <span className="badge">New</span>
                                 </Link>
                             </li>
-                            <li><a>Settings</a></li>
+                            <li>
+                                <Link to="/connections" className="justify-between">
+                                    Connections
+                                    <span className="badge">New</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/requests" className="justify-between">
+                                    Requests
+                                    <span className="badge">New</span>
+                                </Link>
+                            </li>
                             <li><a onClick={logoutHandler}>Logout</a></li>
                         </ul>
                     </div>

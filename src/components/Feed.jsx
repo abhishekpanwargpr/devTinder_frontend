@@ -19,7 +19,9 @@ const Feed = () => {
   return (
     feed && (
       <div className='flex justify-center'>
-      <UserCard user= {feed[0]}/>
+        <div className='flex flex-wrap justify-center gap-4'>
+        {feed && feed.map((user)=><UserCard key={user._id} user={user}/>)}
+        </div>
       </div>
     )
   )
