@@ -33,5 +33,4 @@ const RequestCard = ({ user }) => {
         </div>
     )
 }
-
 export default RequestCard

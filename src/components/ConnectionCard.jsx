@@ -7,9 +7,9 @@ const ConnectionCard = ({user}) => {
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{firstName + " "+ lastName}</h2>
-                {age && gender && <p>{age+","+gender}</p>}
-                <p>{about}</p>
-                <p>{skills}</p>
+                {age && gender && <p className="text-left font-semibold font-sans">{age+","+gender}</p>}
+                <p className="text-left">{about}</p>
+                <p className="">{skills}</p>
             </div>
         </div>
     )

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { BASE_URL } from '../utils/constants';
 import axios from 'axios';
-import UserCard from './UserCard';
 import { addUser } from '../utils/userSlice';
+import ProfileCard from './ProfileCard';
 
 const EditProfile = ({ user }) => {
     const [firstName, setFirstName] = useState(user.firstName);
@@ -146,7 +146,7 @@ const EditProfile = ({ user }) => {
                     </div>
                 </div>
 
-                <UserCard user={{ firstName, lastName, age, gender, about, photoUrl, skills }} />
+                <ProfileCard user={{ firstName, lastName, age, gender, about, photoUrl, skills }} />
             </div>
             {toast && (
                 <div className="toast toast-top toast-center">

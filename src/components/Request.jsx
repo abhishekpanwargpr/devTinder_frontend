@@ -16,10 +16,13 @@ const Requests = () => {
   useEffect(()=>{
     fetchRequests()
   },[])
-
+  
+  if(!requests)return;
+  
   if(requests.length === 0){
-    return <h2 className="text-2xl font-bold text-center">No Requests found</h2>
+    return (<h2 className="text-2xl font-bold text-center">No Requests found</h2>)
   }
+
   return (
     <div className="flex flex-col text-center">
       <div className='flex flex-wrap justify-center gap-4'>
