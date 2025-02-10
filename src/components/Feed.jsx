@@ -11,17 +11,19 @@ const Feed = () => {
     const connections = await axios.get(BASE_URL + "/user/feed", {
       withCredentials: true
     })
-    dispatch(addFeed(connections.data.data))
+    dispatch(addFeed(connections?.data?.data))
   }
   useEffect(() => {
     feedData()
   }, [])
+  if(!feed)return;
+  if(feed.length === 0){
+    return <div><h1 className='text-center text-2xl font-bold'>No feed to show</h1></div>
+  }
   return (
     feed && (
       <div className='flex justify-center'>
-        <div className='flex flex-wrap justify-center gap-4'>
-        {feed && feed.map((user)=><UserCard key={user._id} user={user}/>)}
-        </div>
+        <UserCard user={feed[0]}/>
       </div>
     )
   )
