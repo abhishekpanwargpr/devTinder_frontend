@@ -12,16 +12,20 @@ const Requests = () => {
       withCredentials: true
     })
     dispatch(addRequest(res.data.allRequests))
-    console.log(res.data.allRequests)
   }
   useEffect(()=>{
     fetchRequests()
   },[])
+
+  if(requests.length === 0){
+    return <h2 className="text-2xl font-bold text-center">No Requests found</h2>
+  }
   return (
     <div className="flex flex-col text-center">
-      <h2 className="text-2xl font-bold">Requests Received</h2>
       <div className='flex flex-wrap justify-center gap-4'>
-        {requests && requests.map((user)=>(<RequestCard key= {user._id} user={user.fromUserId}/>))}
+        {requests &&
+         requests.map((user)=>(<RequestCard key= {user._id} user={user.fromUserId}/>))
+        }
       </div>
     </div>
   )
