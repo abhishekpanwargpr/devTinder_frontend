@@ -18,7 +18,7 @@ const Feed = () => {
   }, [])
   if(!feed)return;
   if(feed.length === 0){
-    return <div><h1 className='text-center text-2xl font-bold'>No feed to show</h1></div>
+    return <div><h1 className='text-center text-2xl font-bold'>No more Users</h1></div>
   }
   return (
     feed && (
