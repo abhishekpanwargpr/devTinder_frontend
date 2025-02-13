@@ -54,6 +54,7 @@ const Login = () => {
         </div>
           <p className="text-center">New User?
             <Link className="mx-2 underline" to="/signUp">SignUp</Link>
+            <Link className="mx-1 underline" to="/forget-password">Forget Password?</Link>
           </p>
       </div>
     </div>
