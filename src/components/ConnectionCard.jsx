@@ -9,7 +9,7 @@ const ConnectionCard = ({user}) => {
                 <h2 className="card-title">{firstName + " "+ lastName}</h2>
                 {age && gender && <p className="text-left font-semibold font-sans">{age+","+gender}</p>}
                 <p className="text-left">{about}</p>
-                <p className="">{skills}</p>
+                <p className="text-left">{skills}</p>
             </div>
         </div>
     )
