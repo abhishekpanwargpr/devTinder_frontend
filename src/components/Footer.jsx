@@ -1,7 +1,16 @@
+import { Link } from "react-router-dom"
+
 const Footer = () => {
     return (
         <footer className="footer bg-neutral text-neutral-content p-4 mt-auto">
             <aside className="grid-flow-col items-center">
+                <div className="flex flex-col">
+                <Link to="/terms-conditions">Terms and Conditions</Link>
+                <Link to="/privacy-policy">Privacy policy</Link>
+                <Link to="/cancelation-refund">Cancellation and Refund Policy</Link>
+                <Link to="/shipping-delivery">Shipping and Delivery</Link>
+                <Link to="/contact-us">Contact us</Link>
+                </div>
                 <svg
                     width="36"
                     height="36"

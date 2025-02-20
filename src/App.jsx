@@ -9,6 +9,12 @@ import Connections from "./components/Connections"
 import Requests from "./components/Request"
 import SignUp from "./components/SignUp"
 import Password from "./components/Password"
+import PrivacyPolicy from "./components/TermsConditions"
+import TermsConditions from "./components/TermsConditions"
+import CancellationRefund from "./components/CancellationRefund"
+import ShippingDelivery from "./components/ShippingDelivery"
+import ContactUs from "./components/ContactUs"
+import Chat from "./components/Chat"
 
 function App() {
   return (
@@ -24,6 +30,12 @@ function App() {
             <Route path="/requests" element={<Requests/>}></Route>
             <Route path="/signup" element={<SignUp/>}></Route>
             <Route path="/forget-password" element={<Password/>}></Route>
+            <Route path="/terms-conditions" element={<TermsConditions/>}></Route>
+            <Route path="/privacy-policy" element={<PrivacyPolicy/>}></Route>
+            <Route path="/cancelation-refund" element={<CancellationRefund/>}></Route>
+            <Route path="/shipping-delivery" element={<ShippingDelivery/>}></Route>
+            <Route path="/contact-us" element={<ContactUs/>}></Route>
+            <Route path="/chat/:targetUserId" element={<Chat/>}></Route>
           </Route>
          </Routes>
       </BrowserRouter>
