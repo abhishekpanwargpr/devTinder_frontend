@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom"
 import { createSocketConnection } from "../utils/socket";
 import { useSelector } from "react-redux";
 import { BASE_URL } from "../utils/constants";
-import axios from "axios";
-
+import axios from "axios"; 
 const Chat = () => {
   const { targetUserId } = useParams();
   const [message, setMessage] = useState([]);
@@ -16,7 +15,7 @@ const Chat = () => {
     const chat = await axios.get(BASE_URL+"/chat/"+targetUserId, {
       withCredentials: true,
     })
-      const chatMessages = chat.data.messages.map((msg)=>{
+    const chatMessages = chat.data.messages.map((msg)=>{
       
       const createdTime = new Date(msg?.createdAt);
       const currTime = new Date();
