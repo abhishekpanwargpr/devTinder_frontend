@@ -20,7 +20,7 @@ const Chat = () => {
       const createdTime = new Date(msg?.createdAt);
       const currTime = new Date();
       const diff = currTime - createdTime;
-      const seen = Math.round(diff / (1000 * 60 * 60)) 
+      const seen = Math.round(diff / (1000 * 60)) 
       return {firstName: msg?.sender?.firstName, text: msg?.text, seen}
     })
     setMessage(chatMessages);
@@ -77,7 +77,9 @@ const Chat = () => {
               <div className="text-xs mt-1 opacity-50">
                 {msg.seen <= 0 || msg.seen === undefined
                   ? "Seen just now"
-                  : `Seen ${msg.seen} hours ago`}
+                  : msg.seen > 60
+                  ? `${Math.round(msg.seen / 60)} hours ago`
+                  : `${msg.seen} minutes ago`}
               </div>
             </div>
           </div>
